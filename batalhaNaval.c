@@ -4,32 +4,44 @@
 #define COLUNAS 10
 
 int main() {
+     //Iniciando a matriz com todas as casas zeradas.
+       int  matriz [LINHAS][COLUNAS] = {0};
+       int i, j;
 
-    int matriz [LINHAS][COLUNAS];   
-    int i, j;
-       //Declarando valores contidos na primra linha da matriz.
-    int colunas [10] = {"A", "B", "C", "D", "E", "F", "G","H", "I", "J"};
-   
+      //Posicionando os navios através dos índices da matriz...
+        matriz [1][5] = 3;  //Navio horizontal
+        matriz [1][6] = 3;
+        matriz [1][7] = 3;
+
+        matriz [3][8] = 3; //Navio vertical
+        matriz [4][8] = 3;
+        matriz [5][8] = 3;
+
+        matriz [6][3] = 3; //Navio diagonal
+        matriz [5][2] = 3;
+        matriz [4][1] = 3;
+
+        matriz [7][7] = 3; //Navio diagonal
+        matriz [8][6] = 3;
+        matriz [9][5] = 3;
 
          //Início da condição para apresentar no console os valores determinados na matriz
         printf("   ");
-           for (i = 0; i < LINHAS; i++) {  //Adicionando incremento para exibir a sequência da primeira primeira linha
-                printf(" %d ", 'A' + j); 
+           for (j = 0; j < COLUNAS; j++) {  //For para exibir COLUNAS
+               printf(" %c", 'A' + j);      //Exibir a primeira linha com as letras de A-J
             }
                 printf("\n");
 
-           for (j = 0; j < COLUNAS; j++){
-                printf("%2d ", j);   //Código para exibir a primeira coluna enumerada do tabuleiro
+           for (i = 0; i < LINHAS; i++){    //For para exibir as LINHAS
+                printf("%2d ",i);           //Exibir a primeira coluna com os números na lateral 
+                for (j = 0; j < COLUNAS; j++){
+                    printf(" %d", matriz [i][j]);  //Percorrer linhas - colunas
+                } 
 
-                for (j = 0; j < 10; j++) {
-                    printf(" %d ", matriz [i][j]); //Percorre linhas e colunas
-                }
-                printf("\n");
-            }
                 
-
-
-
+                printf("\n");
+            }
+            
 
     return 0;
 }
